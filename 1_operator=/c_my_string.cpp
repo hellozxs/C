@@ -17,12 +17,12 @@ public:
         {
             char* tmp = new char[strlen(str._pdata)+1];
             strcpy(tmp, str._pdata);
-        }
 
-        //记得要释放被赋值对象的内存
-        delete[] _pdata;
-        _pdata = tmp;
-        return *this;
+            //记得要释放被赋值对象的内存
+            delete[] _pdata;
+            _pdata = tmp;
+            return *this;
+        }
     }
 
     //现代写法
