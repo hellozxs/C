@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 template <typename T>
 class _queue
 {
@@ -57,5 +56,4 @@ int main()
     q.deleteHead();
     q.deleteHead();
     return 0;
-
 }
