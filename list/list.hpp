@@ -82,6 +82,8 @@ public:
     //在O(1)的时间删除结点
     void deleteNode(Node* pToBeDelete);
 
+    //求链表的倒数第K个结点
+    Node* findKthToTail(size_t K);
 
 private:
     Node* _head;
