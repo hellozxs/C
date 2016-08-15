@@ -14,6 +14,7 @@ listNode<T>* List<T>::findKthToTail(size_t K)
 
     while(K--)
     {
+	  //必须放在if前面
         fast = fast->_next;
         if(fast == NULL)
         {

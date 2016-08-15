@@ -85,6 +85,9 @@ public:
     //求链表的倒数第K个结点
     Node* findKthToTail(size_t K);
 
+    //反转链表
+    Node* reverseList();
+
 private:
     Node* _head;
 };
