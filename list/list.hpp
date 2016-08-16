@@ -61,9 +61,10 @@ public:
         Node* cur = _head;
         while(cur != NULL)
         {
-            std::cout<<cur->_data<<std::endl;
+            std::cout<<cur->_data<<"  ";
             cur = cur->_next;
         }
+        std::cout<<std::endl;
     }
 
 
@@ -87,6 +88,12 @@ public:
 
     //反转链表
     Node* reverseList();
+
+    //反转链表：递归实现
+    Node* reverseList_R ();
+
+private:
+    void _reverseList_R(Node* pre, Node* &head);
 
 private:
     Node* _head;
