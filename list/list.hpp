@@ -93,7 +93,7 @@ public:
     Node* reverseList_R ();
 
 private:
-    void _reverseList_R(Node* pre, Node* &head);
+    void _reverseList_R(Node*head, Node* p);
 
 private:
     Node* _head;
