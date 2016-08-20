@@ -6,11 +6,13 @@ using namespace std;
 
 
 template <typename T>
-void List<T>::_reverseList_R(listNode<T>* head,listNode<T>* p)
+void List<T>::_reverseList_R(listNode<T>* &head,listNode<T>* p)
 {
+    if(p == NULL)
+        return;
     if(p->_next == NULL)
     {
-       head->_next = p;
+       head = p;
         return;//找到最后一个结点
     }
 
