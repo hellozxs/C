@@ -3,6 +3,7 @@
 #include <iostream>
 
 
+
 template <typename T>
 struct listNode
 {
@@ -23,6 +24,12 @@ public:
     List()
         :_head(NULL)
     {}
+
+    ~List()
+    {
+        while(_head)
+            popBack();
+    }
 
     void pushBack(const T& data)
     {
@@ -80,6 +87,36 @@ public:
         return NULL;
     }
 
+    void Sort()
+    {
+        if(_head == NULL || _head->_next == NULL)
+            return;
+
+        Node* tail = NULL;
+        while(tail != _head->_next)
+        {
+            bool flag = false;
+            Node* cur = _head;
+            while(cur->_next != tail)
+            {
+                if(cur->_data > cur->_next->_data)
+                {
+                    std::swap(cur->_data, cur->_next->_data);
+                    flag = true;
+                }
+                cur = cur->_next;
+            }
+            if(flag == false)
+                return;
+            tail = cur;
+        }
+    }
+
+    Node* Front()const
+    {
+        return _head;
+    }
+
     //在O(1)的时间删除结点
     void deleteNode(Node* pToBeDelete);
 
@@ -91,6 +128,9 @@ public:
 
     //反转链表：递归实现
     Node* reverseList_R ();
+
+    //合并两个升序的链表
+    void Merge(const List<T>& l1,const List<T> &l2);
 
 private:
     void _reverseList_R(Node* &head, Node* p);
