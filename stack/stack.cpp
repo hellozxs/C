@@ -10,7 +10,7 @@ public:
     {
         if(a.size() > 0)
         {
-            const T tmp = a[a.size()-1];
+            const T &tmp = a[a.size()-1];
             a.push_back(data);
             if(tmp > data)
                 a.push_back(data);
