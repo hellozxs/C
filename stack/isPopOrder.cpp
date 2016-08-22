@@ -2,8 +2,11 @@
 #include <stack>
 
 
-bool isPopOrder(int* arrPush, int* arrPop, size_t size)
+bool isPopOrder(const int* arrPush, const int* arrPop, size_t size)
 {
+    if(arrPush == NULL || arrPop == NULL || size == 0)
+        return false;
+
     std::stack<int> s;
     int popIndex = 0, pushIndex = 0;
     for( ; popIndex < size; popIndex++ )
